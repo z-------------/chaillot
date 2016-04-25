@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        include ./head.jade
+        block head
+    body
+        include ./header.jade
+        #main
+            block main
+        include ./footer.jade
+        #scripts
+            include ./scripts.jade
+            block scripts
