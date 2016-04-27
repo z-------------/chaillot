@@ -1,0 +1,21 @@
+{
+  "name": "chaillot",
+  "description": "Vivu la libra parolado!",
+  "main": "app.js",
+  "authors": [
+    "Zack Guard <zacharyguard@gmail.com> (http://zacharyguard.co.nf)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/z-------------/chaillot",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0"
+  }
+}

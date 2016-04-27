@@ -4,6 +4,7 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var favicon = require("serve-favicon");
 var http = require("http");
+var path = require("path");
 
 var routes = [{
     path: "/", router: "index"
@@ -28,6 +29,12 @@ app.use(express.static(path.join(__dirname, "public")));
 for (routeDef of routes) {
     app.use(routeDef.path, require("./routes/" + routeDef.router));
 }
+
+// serve bower components
+app.get("/bower_components/*", function(req, res) {
+    var filePath = path.join(__dirname, req.originalUrl);
+    res.sendFile(filePath);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

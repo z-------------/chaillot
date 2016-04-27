@@ -10,6 +10,7 @@ router.post("/", function(req, res, next) {
     var postID = new Date().getTime().toString() + zpad(Math.round(Math.random() * 999999), 6);
     var authorID = 3435;
     var postType = "text";
+    var dateString = new Date().toString();
 
     var mongoURL = "mongodb://localhost:27017/chaillot";
 
@@ -20,7 +21,8 @@ router.post("/", function(req, res, next) {
                     id: postID,
                     author: authorID,
                     type: postType,
-                    content: postContent
+                    content: postContent,
+                    date: dateString
                 }, function(err, result) {
                     if (!err) {
                         res.sendStatus(201);

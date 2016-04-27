@@ -1,0 +1,30 @@
+<dom-module id="chaillot-post">
+    <template>
+        <div class="chaillot-post--top">
+            <div class="chaillot-post--author-name">{{authorName}}</div>
+        </div>
+        <div class="chaillot-post--middle">
+            <div class="chaillot-post--content">{{content}}</div>
+        </div>
+        <div class="chaillot-post--bottom">
+            <div class="chaillot-post--date">{{date}}</div>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "chaillot-post",
+            properties: {
+                authorName: {
+                    type: String
+                },
+                content: {
+                    type: String
+                },
+                date: {
+                    type: String
+                }
+            }
+        });
+    </script>
+</dom-module>
