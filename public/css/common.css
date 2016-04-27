@@ -35,3 +35,7 @@ h5 {
   font-family: "Cabin", "Noto Sans", sans-serif;
   font-weight: 700;
 }
+
+a {
+  color: #1976D2;
+}

@@ -3,7 +3,6 @@ var path = require("path");
 
 // consts
 
-var JADE_PATH = "./source/jade/index.jade";
 var SASS_PATH = "./source/sass/common.scss";
 var PUBLIC_PATH = "./public/";
 
@@ -21,23 +20,12 @@ gulp.task("sass", function() {
         .pipe(gulp.dest(path.join(PUBLIC_PATH, "css")));
 });
 
-// jade
-
-gulp.task("jade", function() {
-    var jade = require("gulp-jade");
-
-    return gulp.src(JADE_PATH)
-        .pipe(jade({ pretty: true }))
-        .pipe(gulp.dest(PUBLIC_PATH));
-});
-
 // watch
 
 gulp.task("watch", function() {
-    gulp.watch(JADE_PATH, ["jade"]);
     gulp.watch("./source/sass/*", ["sass"]);
 });
 
 // default task
 
-gulp.task("default", ["jade", "sass", "watch"]);
+gulp.task("default", ["sass","watch"]);
